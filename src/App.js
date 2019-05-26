@@ -15,13 +15,16 @@ class App extends React.Component {
     this.selectionDidChange = this.selectionDidChange.bind(this);
   }
 
-  selectionDidChange (newValue) {
-    let data=fetch("http://open.mapquestapi.com/directions/v2/alternateroutes?key=86e3wu3G1SG1k22vRkXsygIwUE8wh6zU&from=mumbai&to=Indore")
-    .then(response => {response.json()})
+  async selectionDidChange (newValue) {
+    const unparsedData = await fetch("http://open.mapquestapi.com/directions/v2/alternateroutes?key=86e3wu3G1SG1k22vRkXsygIwUE8wh6zU&from=mumbai&to=indore")
+    const data = unparsedData.json();
+
     this.setState({
-      selected: newValue,
-      data: data,
+        selected: newValue,
+        data,
     });
+
+    console.log("DATA SET TO: ", this.state.data);
   }
 
   render () {
@@ -32,7 +35,7 @@ class App extends React.Component {
           {
             this.state.selected ? (
               <p>
-                {this.state.data}
+                Data goes here
               </p>  
             ) :
             (

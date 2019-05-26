@@ -7,22 +7,15 @@ class Dropdown extends React.Component {
     this.state = {
       displayMenu: false
     };
-    this.showDropdownMenu = this.showDropdownMenu.bind(this);
-    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+    this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  toggleDropdownMenu(event) {
-    this.setState({ displayMenu: true }, () => {
-      document.addEventListener('click', this.hideDropdownMenu);
-    });
-  }
-  hideDropdownMenu() {
-    this.setState({ displayMenu: false }, () => {
-      document.removeEventListener('click', this.hideDropdownMenu)});
+  toggleDropdownMenu() {
+    const displayMenu = !this.state.displayMenu;
+    this.setState({ displayMenu });
   }
 
   handleClick = event => {
-    console.log(event.currentTarget.dataset.id);
     this.props.selectionDidChange(event.currentTarget.dataset.id);
   };
   render() {
