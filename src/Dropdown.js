@@ -11,7 +11,7 @@ class Dropdown extends React.Component {
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  showDropdownMenu(event) {
+  toggleDropdownMenu(event) {
     this.setState({ displayMenu: true }, () => {
       document.addEventListener('click', this.hideDropdownMenu);
     });
@@ -28,7 +28,7 @@ class Dropdown extends React.Component {
   render() {
     return (
       <div className="dropdown" style={{ background: "#61dafb", width: "200px", position: "left"}}>
-        <div className="button" onClick={this.showDropdownMenu}>
+        <div className="button" onClick={this.toggleDropdownMenu}>
           Location
         </div>
         {this.state.displayMenu ? (
