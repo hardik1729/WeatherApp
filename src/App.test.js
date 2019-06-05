@@ -12,6 +12,4 @@ it('renders without crashing', () => {
 it('it renders consistently', () => {
   const app = TestRenderer.create(<App />);
   expect(app.toJSON()).toMatchSnapshot();
-  //app.root.instance.selectionDidChange(app.root.instance.state.selected);
-  //console.log(app.root.instance.state);
 });
