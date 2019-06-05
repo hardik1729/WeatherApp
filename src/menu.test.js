@@ -5,13 +5,7 @@ import App from './App';
 
 it('it renders with displaymenu', () => {
     const dropdown = TestRenderer.create(<Dropdown selectionDidChange={jest.fn()}/>);
-    dropdown.root.instance.showDropdownMenu();
-    expect(dropdown.toJSON()).toMatchSnapshot();
-});
-
-it('it renders without displaymenu', () => {
-    const dropdown = TestRenderer.create(<Dropdown selectionDidChange={jest.fn()}/>);
-    dropdown.root.instance.hideDropdownMenu();
+    dropdown.root.instance.toggleDropdownMenu();
     expect(dropdown.toJSON()).toMatchSnapshot();
 });
 
