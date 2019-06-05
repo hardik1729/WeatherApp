@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders consistently 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="dropdown"
+    style={
+      Object {
+        "background": "#61dafb",
+        "position": "left",
+        "width": "200px",
+      }
+    }
+  >
+    <div
+      className="button"
+      onClick={[Function]}
+    >
+      Location
+    </div>
+  </div>
+  <header
+    className="App-header"
+  >
+    <div>
+      <img
+        alt="logo"
+        className="App-logo"
+        src="logo.svg"
+      />
+      <p>
+        Distance details to be displayed here
+      </p>
+    </div>
+  </header>
+</div>
+`;
