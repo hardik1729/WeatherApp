@@ -8,7 +8,7 @@ class Dropdown extends React.Component {
       displayMenu: false,
       name: "Location"
     };
-    this.toggleDropdownMenu = this.showDropdownMenu.bind(this);
+    this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
   toggleDropdownMenu(event) {
@@ -29,7 +29,7 @@ class Dropdown extends React.Component {
   render() {
     return (
       <div className="dropdown" style={{ background: "#61dafb", width: "200px", position: "left"}}>
-        <div className="button" onClick={this.showDropdownMenu}>
+        <div className="button" onClick={this.toggleDropdownMenu}>
           {this.state.name}
         </div>
         {this.state.displayMenu ? (
