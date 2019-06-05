@@ -99,23 +99,3 @@ exports[`it renders with displaymenu 1`] = `
   </ul>
 </div>
 `;
-
-exports[`it renders without displaymenu 1`] = `
-<div
-  className="dropdown"
-  style={
-    Object {
-      "background": "#61dafb",
-      "position": "left",
-      "width": "200px",
-    }
-  }
->
-  <div
-    className="button"
-    onClick={[Function]}
-  >
-    Location
-  </div>
-</div>
-`;
