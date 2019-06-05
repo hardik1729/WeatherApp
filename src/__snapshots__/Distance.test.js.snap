@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders place distances correctly 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="dropdown"
+    style={
+      Object {
+        "background": "#61dafb",
+        "position": "left",
+        "width": "200px",
+      }
+    }
+  >
+    <div
+      className="button"
+      onClick={[Function]}
+    >
+      Location
+    </div>
+  </div>
+  <header
+    className="App-header"
+  >
+    <div>
+      <p>
+        Liverpool
+      </p>
+      <p>
+        100
+         miles
+      </p>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`it renders place distances correctly 2`] = `
+<div
+  className="App"
+>
+  <div
+    className="dropdown"
+    style={
+      Object {
+        "background": "#61dafb",
+        "position": "left",
+        "width": "200px",
+      }
+    }
+  >
+    <div
+      className="button"
+      onClick={[Function]}
+    >
+      Location
+    </div>
+  </div>
+  <header
+    className="App-header"
+  >
+    <div>
+      <p>
+        Bristol
+      </p>
+      <p>
+        200
+         miles
+      </p>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`it renders place distances correctly 3`] = `
+<div
+  className="App"
+>
+  <div
+    className="dropdown"
+    style={
+      Object {
+        "background": "#61dafb",
+        "position": "left",
+        "width": "200px",
+      }
+    }
+  >
+    <div
+      className="button"
+      onClick={[Function]}
+    >
+      Location
+    </div>
+  </div>
+  <header
+    className="App-header"
+  >
+    <div>
+      <p>
+        Manchester
+      </p>
+      <p>
+        300
+         miles
+      </p>
+    </div>
+  </header>
+</div>
+`;
