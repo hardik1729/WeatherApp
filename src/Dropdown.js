@@ -5,38 +5,43 @@ class Dropdown extends React.Component {
   constructor() {
     super();
     this.state = {
-      displayMenu: false
+      displayMenu: false,
+      name: "Location"
     };
     this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  toggleDropdownMenu() {
+  toggleDropdownMenu(event) {
     const displayMenu = !this.state.displayMenu;
-    this.setState({ displayMenu });
+    this.setState({ 
+      displayMenu: displayMenu
+    });
   }
 
-  handleClick = event => {
-    this.props.selectionDidChange(event.currentTarget.dataset.id);
+  handleClick(event){
+    //console.log("from handleclick "+event.currentTarget.dataset.id);
     this.setState({
-      displayMenu: false,
+      displayMenu:false,
+      name: event.currentTarget.dataset.id
     });
+    this.props.selectionDidChange(event.currentTarget.dataset.id);
   };
   render() {
     return (
       <div className="dropdown" style={{ background: "#61dafb", width: "200px", position: "left"}}>
         <div className="button" onClick={this.toggleDropdownMenu}>
-          Location
+          {this.state.name}
         </div>
         {this.state.displayMenu ? (
           <ul>
-            <li data-id="mumbai" onClick={this.handleClick}>
-              Mumbai
+            <li data-id="Liverpool" onClick={this.handleClick}>
+              Liverpool
             </li>
-            <li data-id="london" onClick={this.handleClick}>
-              London
+            <li data-id="Bristol" onClick={this.handleClick}>
+              Bristol
             </li>
-            <li data-id="indore" onClick={this.handleClick}>
-              Indore
+            <li data-id="Manchester" onClick={this.handleClick}>
+              Manchester
             </li>
           </ul>
         ) : null}

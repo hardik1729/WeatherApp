@@ -9,40 +9,45 @@ class App extends React.Component {
 
     this.state = {
       selected: props.selected,
-      data: [],
+      data: {},
     }
-
     this.selectionDidChange = this.selectionDidChange.bind(this);
   }
 
   async selectionDidChange (newValue) {
-    const unparsedData = await fetch("http://open.mapquestapi.com/directions/v2/alternateroutes?key=86e3wu3G1SG1k22vRkXsygIwUE8wh6zU&from=mumbai&to=indore")
-    const data = unparsedData.json();
-
+    const response = await fetch("http://open.mapquestapi.com/directions/v2/alternateroutes?key=86e3wu3G1SG1k22vRkXsygIwUE8wh6zU&from=london&to="+newValue);
+    const data = await response.json();
     this.setState({
-        selected: newValue,
-        data,
+      selected: newValue,
+      data: data
     });
 
     console.log("DATA SET TO: ", this.state.data);
   }
 
   render () {
+    // console.log(this.state.selected);
+    // console.log(this.state.data);
     return (
       <div className="App">
         <Dropdown selectionDidChange={this.selectionDidChange}/>
         <header className="App-header">
           {
             this.state.selected ? (
-              <p>
-                Data goes here
-              </p>  
+              <div>
+                <p>
+                  {this.state.selected}
+                </p>
+                <p>
+                  {this.state.data.route.distance} miles
+                </p>
+              </div> 
             ) :
             (
               <div>
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
-                  Weather Details to be displayed here
+                  Distance details to be displayed here
                 </p>
               </div> 
             )
