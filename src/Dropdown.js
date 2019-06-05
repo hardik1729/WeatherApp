@@ -17,6 +17,9 @@ class Dropdown extends React.Component {
 
   handleClick = event => {
     this.props.selectionDidChange(event.currentTarget.dataset.id);
+    this.setState({
+      displayMenu: false,
+    });
   };
   render() {
     return (
