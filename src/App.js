@@ -21,8 +21,6 @@ class App extends React.Component {
       selected: newValue,
       data: data
     });
-
-    console.log("DATA SET TO: ", this.state.data);
   }
 
   render () {
